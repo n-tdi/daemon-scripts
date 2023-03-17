@@ -1,1 +1,13 @@
+[Unit]
+Description="Apache2 Java Web Server"
 
+[Service]
+User=root
+WorkingDirectory=/var/project
+# Make sure deploy.sh has u+x on it
+ExecStart=sudo /var/project/deploy.sh
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target
